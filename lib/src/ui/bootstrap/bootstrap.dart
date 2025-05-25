@@ -5,7 +5,8 @@ import 'package:window_manager/window_manager.dart';
 Future<void> bootstrap() async {
   AppUtils.checkPlatform();
   WidgetsFlutterBinding.ensureInitialized();
-  windowManager.ensureInitialized();
-  windowManager.setTitle(Constants.appName);
+  windowManager
+    ..ensureInitialized()
+    ..setTitle(Constants.appName);
   runApp(const App());
 }

@@ -9,6 +9,9 @@ class AppColors {
   static const Color primary = Color(0xff27479a);
   static const Color primary900 = Color(0xff0053b8);
 
+  static const Color slate = Color(0xff212121);
+  static const Color slate1 = Color(0xff262626);
+
   // Semantic Red Series
   static const error900 = Color(0xff331818);
   static const error800 = Color(0xff5C2A2A);

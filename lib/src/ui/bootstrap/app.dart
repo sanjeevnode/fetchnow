@@ -43,6 +43,7 @@ class __AppViewState extends State<_AppView> {
           child: widget!,
         );
       },
+      initialRoute: AppRouteNames.splash,
       onGenerateRoute: AppRouter.onGenerateRoute,
       home: const Splash(),
     );

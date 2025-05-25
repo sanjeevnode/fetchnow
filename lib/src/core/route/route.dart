@@ -2,7 +2,7 @@ import 'package:fetchnow/src/ui/ui.dart';
 import 'package:flutter/material.dart';
 
 class AppRouteNames {
-  static const String home = "/";
+  static const String home = "/home";
   static const String splash = "/splash";
 }
 
