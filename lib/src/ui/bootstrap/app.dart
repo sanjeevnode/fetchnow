@@ -1,4 +1,4 @@
-import 'package:fetchnow/src/ui/ui.dart';
+import 'package:fetchnow/src/src.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

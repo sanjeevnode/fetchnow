@@ -1,4 +1,4 @@
-import 'package:fetchnow/src/ui/ui.dart';
+import 'package:fetchnow/src/core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:window_manager/window_manager.dart';
 
@@ -11,6 +11,7 @@ class Splash extends StatefulWidget {
 
 class _SplashState extends State<Splash> {
   void _initSize() {
+    Logger.i('Splash[_initSize] - Initializing window size and options');
     windowManager.waitUntilReadyToShow(
       const WindowOptions(
         center: true,
@@ -36,17 +37,11 @@ class _SplashState extends State<Splash> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.neutral900,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            CircularProgressIndicator(),
-            SizedBox(height: 20),
-            Text(
-              'Loading...',
-              style: AppTextStyle.displayH1,
-            ),
-            SizedBox(height: 10),
             Assets.icons.logo.svg(
               width: 100,
               height: 100,
