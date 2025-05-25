@@ -1,32 +1,35 @@
 import 'dart:developer' as developer;
 
-/// AppLogger
 class Logger {
-  /// Info
   static void i(Object msg, {String tag = 'INFO'}) {
-    _print('\x1B[34m$msg\x1B[34m', tag);
+    _print(msg, tag, '34'); // Blue
   }
 
-  /// Success
   static void s(Object msg, {String tag = 'SUCCESS'}) {
-    _print('\x1B[32m$msg\x1B[32m', tag);
+    _print(msg, tag, '32'); // Green
   }
 
-  /// Warning
   static void w(Object msg, {String tag = 'WARNING'}) {
-    _print('\x1B[33m$msg\x1B[33m', tag);
+    _print(msg, tag, '33'); // Yellow
   }
 
-  /// Error
   static void e(Object msg, {String tag = 'ERROR'}) {
-    _print('\x1B[31m$msg\x1B[31m', tag);
+    _print(msg, tag, '31'); // Red
   }
 
-  static void _print(String msg, String? tag) {
+  static void _print(Object msg, String tag, String colorCode) {
     final timestamp = DateTime.now().toIso8601String();
+
+    final coloredTimestampAndMsg = _colorize('[$timestamp] $msg', colorCode);
+
+    final coloredTag = _colorize(tag, colorCode);
+
     developer.log(
-      '[$timestamp] $msg',
-      name: tag ?? '',
+      coloredTimestampAndMsg,
+      name: coloredTag,
     );
   }
+
+  static String _colorize(String text, String colorCode) =>
+      '\x1B[${colorCode}m$text\x1B[0m';
 }
