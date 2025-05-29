@@ -54,7 +54,7 @@ flutter_gen:
     outputs:
       class_name: Assets
       package_parameter_enabled: false
-  output: lib/src/ui/generated
+  output: lib/src/core/generated
   line_length: 80
 
   integrations:

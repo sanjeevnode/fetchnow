@@ -14,11 +14,20 @@ import 'package:flutter/services.dart';
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/close.svg
+  SvgGenImage get close => const SvgGenImage('assets/icons/close.svg');
+
   /// File path: assets/icons/logo.svg
   SvgGenImage get logo => const SvgGenImage('assets/icons/logo.svg');
 
+  /// File path: assets/icons/minus.svg
+  SvgGenImage get minus => const SvgGenImage('assets/icons/minus.svg');
+
+  /// File path: assets/icons/window.svg
+  SvgGenImage get window => const SvgGenImage('assets/icons/window.svg');
+
   /// List of all assets
-  List<SvgGenImage> get values => [logo];
+  List<SvgGenImage> get values => [close, logo, minus, window];
 }
 
 class Assets {

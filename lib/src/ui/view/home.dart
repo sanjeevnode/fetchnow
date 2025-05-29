@@ -1,6 +1,5 @@
-import 'package:fetchnow/src/core/core.dart';
+import 'package:fetchnow/src/src.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:window_manager/window_manager.dart';
 
 class Home extends StatefulWidget {
@@ -18,7 +17,7 @@ class _HomeState extends State<Home> {
         size: Constants.appSize,
         minimumSize: Constants.appSize,
         skipTaskbar: false,
-        titleBarStyle: TitleBarStyle.normal,
+        titleBarStyle: TitleBarStyle.hidden,
       ),
       () async {
         await windowManager.setResizable(true);
@@ -40,20 +39,22 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.slate,
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+      body: SizedBox(
+        width: AppSize(context).width(100),
+        height: AppSize(context).height(100),
+        child: const Column(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Assets.icons.logo.svg(
-              width: 100,
-              height: 100,
-            ),
-            const SizedBox(height: 20),
-            Text(
-              'Welcome to FetchNow',
-              style: AppTextStyle.displayH3.copyWith(
-                color: AppColors.primary900,
-              ),
+            Titlebar(),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Sidebar(),
+              ],
             ),
           ],
         ),

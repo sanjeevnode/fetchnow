@@ -6,8 +6,8 @@ class AppColors {
   static const Color accent = Color(0xffF49E4C);
   static const Color accent900 = Color(0xfffe7f2d);
 
-  static const Color primary = Color(0xff27479a);
-  static const Color primary900 = Color(0xff0053b8);
+  static const Color primary = Colors.blue;
+  static const Color primary900 = Color.fromARGB(255, 9, 135, 238);
 
   static const Color slate = Color(0xff212121);
   static const Color slate1 = Color(0xff262626);
